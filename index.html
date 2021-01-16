@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+    <script src="./countdown.js"></script>
+  </head>
+
+  <body>
+    <h1>The Taco Bell Potato Countdown</h1>
+    <div id="countdown"></div>
+  </body>
+
+
+  <script>
+  let request;
+
+  const performAnimation = function(){
+    request = window.requestAnimationFrame(performAnimation);
+    document.getElementById("countdown").innerText = countdown( new Date().getTime(), new Date('2021-03-11T00:00:00.000').getTime(), countdown.MONTHS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS ).toString();
+  };
+
+  window.requestAnimationFrame(performAnimation);
+
+  </script>
+</html>
